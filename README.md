@@ -21,8 +21,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP
 
-_These are examples only. Replace with your own MVP features._
-
 - Successfully create and render external api
 - Successfully allow user to add posts 
 - Successfully route to all pages
