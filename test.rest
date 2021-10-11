@@ -1,0 +1,26 @@
+GET http://localhost:3000/posts HTTP/1.1
+
+###
+
+POST http://localhost:3000/posts HTTP/1.1
+content-type: application/json
+
+{
+    "title": "another sample title",
+    "author": "another sample name",
+    "content": "more more good sample stuff"
+}
+
+###
+
+PUT http://localhost:3000/posts/6163ab8b61e9e98bac0d50c4 HTTP/1.1
+content-type: application/json
+
+{
+"author": "put request author works"
+}
+
+###
+
+DELETE http://localhost:3000/posts/6163a4e86e0088b2b3521b9b HTTP/1.1
+
