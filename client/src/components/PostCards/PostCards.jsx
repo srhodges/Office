@@ -30,7 +30,7 @@ const PostCards = () => {
 
   return (
     <div className='post-cards'>
-      <div className='latest'>Browse</div>
+      <div className='browse'>Browse</div>
       <div className='cards'>{CARDS}</div>
     </div>
   )
