@@ -3,7 +3,8 @@ import './PostEdit.css'
 import { useParams, Redirect } from 'react-router-dom'
 import { getPost } from '../../services/posts'
 import { updatePost } from '../../services/posts'
-import  Layout  from '../../components/Layout/Layout'
+import Layout from '../../components/Layout/Layout'
+import {verifyUser} from '../../services/users'
 
 const PostEdit = (props) => {
   const [post, setPost] = useState({
@@ -12,8 +13,8 @@ const PostEdit = (props) => {
     imgURL: '',
     content: '',
   })
-
-  const [updated, setUpdated] = useState(false)
+  
+  const { updated, setUpdated } = props
   let { id } = useParams()
 
   useEffect(() => {
@@ -34,13 +35,13 @@ const PostEdit = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    await verifyUser()
     const updated = await updatePost(id, post)
     setUpdated(updated)
   }
 
   if (updated) {
     return <Redirect to={`/posts/${id}`} />
-    // needs to update selected post, not new-post route
   }
 
   return (

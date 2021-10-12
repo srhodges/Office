@@ -10,12 +10,12 @@ import { verifyUser } from './services/users'
 import SignUp from './screens/SignUp/SignUp'
 import SignIn from './screens/SignIn/SignIn'
 import SignOut from './screens/SignOut/SignOut'
-import SearchBar from './components/SearchBar/SearchBar'
+import SearchBar from './components/SearchResults/SearchBar'
 import { getPosts } from './services/posts'
 
 const App = () => {
   const [user, setUser] = useState(null)
-
+  const [updated, setUpdated] = useState(false)
   const [posts, setPosts] = useState([])
   const [searchResult, setSearchResult] = useState([])
   const [searchInput, setSearchInput] = useState('')
@@ -38,7 +38,7 @@ const App = () => {
       user ? setUser(user) : setUser(null)
     }
     fetchUser()
-  }, [])
+  }, [updated])
 
   return (
     <div className="app">
@@ -59,7 +59,7 @@ const App = () => {
           {user ? <PostCreate user={user} /> : <Redirect to="/sign-in" />}
         </Route>
         <Route exact path="/posts/:id/edit">
-          {user ? <PostEdit user={user} /> : <Redirect to='/sign-in' />}
+          {user ? <PostEdit user={user} setUpdated={setUpdated} updated={updated}  /> : <Redirect to='/sign-in' />}
         </Route>
         <Route exact path="/posts/:id">
           <PostDetail user={user} />
