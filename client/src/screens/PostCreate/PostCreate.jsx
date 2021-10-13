@@ -32,8 +32,11 @@ const PostCreate = (props) => {
     return <Redirect to={`/posts`} />
   }
   return (
+    <div className="create-container">
+      <div className="create-form-container">
+        
     <Layout user={props.user}>
-      <form className='create-form' onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           className='input-title'
           placeholder='Title'
@@ -42,7 +45,7 @@ const PostCreate = (props) => {
           required
           autoFocus
           onChange={handleChange}
-        />
+          />
         <input
           className='input-author'
           placeholder='Author'
@@ -51,7 +54,7 @@ const PostCreate = (props) => {
           required
           autoFocus
           onChange={handleChange}
-        />
+          />
         
           <input
             className='input-image-link'
@@ -59,7 +62,7 @@ const PostCreate = (props) => {
             value={post.imgURL}
             name='imgURL'
             onChange={handleChange}
-          />
+            />
         <textarea
           className='textarea-content'
           rows={10}
@@ -68,12 +71,14 @@ const PostCreate = (props) => {
           name='content'
           required
           onChange={handleChange}
-        />
+          />
         <button type='submit' className='button'>
           New Post
         </button>
       </form>
     </Layout>
+          </div>
+          </div>
   )
 }
 

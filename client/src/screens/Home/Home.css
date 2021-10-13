@@ -8,15 +8,21 @@
 }
 
 .home {
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .home-name {
-  color: F6E8E8;
+  color: #f6e8e8;
+  font-size: 50px;
+  margin-left: 60%;
 }
 
 .home-text {
-  color: F6E8E8;
+  color: #f6e8e8;
+  margin-left: 60%;
 }
 
 /* @media (max-width: 500px) {

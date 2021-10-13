@@ -44,6 +44,7 @@ export const changePassword = async (passwords, user) => {
 export const verifyUser = async () => {
   const token = localStorage.getItem('token')
   if (token) {
+    console.log(token)
     const res = await api.get('/verify')
     return res.data
   }

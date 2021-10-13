@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './SignIn.css'
 import { signIn } from '../../services/users'
 import { useHistory } from 'react-router-dom'
+import Nav from '../../components/Nav/Nav'
 
 const SignIn = (props) => {
   const history = useHistory()
@@ -55,6 +56,8 @@ const SignIn = (props) => {
 
   return (
     <div className="signin-page">
+
+      <Nav/>
 
       <div className="signin-name">
       <h1>The Office</h1>

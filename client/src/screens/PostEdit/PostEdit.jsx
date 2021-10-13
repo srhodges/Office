@@ -4,7 +4,8 @@ import { useParams, Redirect } from 'react-router-dom'
 import { getPost } from '../../services/posts'
 import { updatePost } from '../../services/posts'
 import Layout from '../../components/Layout/Layout'
-import {verifyUser} from '../../services/users'
+import { useHistory } from 'react-router-dom'
+
 
 const PostEdit = (props) => {
   const [post, setPost] = useState({
@@ -14,7 +15,7 @@ const PostEdit = (props) => {
     content: '',
   })
   
-  const { updated, setUpdated } = props
+  let history = useHistory()
   let { id } = useParams()
 
   useEffect(() => {
@@ -35,20 +36,18 @@ const PostEdit = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await verifyUser()
-    const updated = await updatePost(id, post)
-    setUpdated(updated)
+    const res = await updatePost(id, post)
+    console.log(res)
+    history.push(`/posts/${id}`) 
   }
 
-  if (updated) {
-    return <Redirect to={`/posts/${id}`} />
-  }
+  
 
   return (
     <Layout user={props.user}>
       <form className='edit-form' onSubmit={handleSubmit}>
       <div className='post-edit'>
-          <form onSubmit={handleSubmit}>
+          
             <input
               className='edit-input-image-link'
               placeholder='Image Link'
@@ -57,9 +56,9 @@ const PostEdit = (props) => {
               required
               onChange={handleChange}
             />
-          </form>
+          
         </div>
-        <form className='edit-form' onSubmit={handleSubmit}>
+        
           <input
             className='input-title'
             placeholder='Title'
@@ -91,7 +90,7 @@ const PostEdit = (props) => {
             Save
           </button>
         </form>
-      </form>
+      
     </Layout>
   )
 }
