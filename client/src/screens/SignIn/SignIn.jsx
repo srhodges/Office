@@ -54,6 +54,18 @@ const SignIn = (props) => {
   const { email, password } = form
 
   return (
+    <div className="signin-page">
+
+      <div className="signin-name">
+      <h1>The Office</h1>
+      </div>
+
+      <div className="signin-text">
+        <p>A collection of literary works, in the works.</p>
+      </div>
+
+
+
     <div className='form-container'>
       <h3>Sign In</h3>
       <form onSubmit={onSignIn}>
@@ -65,7 +77,7 @@ const SignIn = (props) => {
           value={email}
           placeholder='Enter Email'
           onChange={handleChange}
-        />
+          />
         <label>Password</label>
         <input
           required
@@ -74,10 +86,11 @@ const SignIn = (props) => {
           type='password'
           placeholder='Password'
           onChange={handleChange}
-        />
+          />
         {renderError()}
       </form>
     </div>
+          </div>
   )
 }
 

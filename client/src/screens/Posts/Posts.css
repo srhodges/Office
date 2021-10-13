@@ -1,0 +1,48 @@
+.posts {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* padding: 40px; */
+  /* border: 20px solid; */
+}
+
+.browse-categories {
+  font-family: "Great Vibes", cursive;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 5px solid black;
+  margin: 10px;
+}
+
+h2 {
+  padding: 5px;
+  border: 5px solid black;
+  margin: 10px;
+}
+
+.featured-works {
+  font-family: "Great Vibes", cursive;
+}
+
+@media (max-width: 500px) {
+  .posts {
+    width: 100%;
+    justify-content: space-around;
+  }
+}

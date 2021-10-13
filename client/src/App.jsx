@@ -10,7 +10,6 @@ import { verifyUser } from './services/users'
 import SignUp from './screens/SignUp/SignUp'
 import SignIn from './screens/SignIn/SignIn'
 import SignOut from './screens/SignOut/SignOut'
-import SearchBar from './components/SearchResults/SearchBar'
 import { getPosts } from './services/posts'
 
 const App = () => {
@@ -65,8 +64,7 @@ const App = () => {
           <PostDetail user={user} />
         </Route>
         <Route exact path="/posts">
-          <Posts posts={posts} user={user} searchResult={searchResult} />
-          <SearchBar posts={posts} setSearchResult={setSearchResult} />
+          <Posts posts={posts} user={user} searchResult={searchResult} setSearchResult={setSearchResult} />
         </Route>
       </Switch>
     </div>

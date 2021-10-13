@@ -1,0 +1,26 @@
+.signin-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  height: 100vh;
+  width: 100%;
+}
+
+/* sign up form css is carrying over here */
+
+.signin-name {
+  flex-direction: column;
+  color: #f6e8e8;
+  font-family: Great Vibes, curvsive;
+  font-size: 50px;
+  letter-spacing: 1px;
+}
+
+.signin-text {
+  flex-direction: column;
+  color: #f6e8e8;
+  font-family: Great Vibes, curvsive;
+  font-size: 30px;
+}

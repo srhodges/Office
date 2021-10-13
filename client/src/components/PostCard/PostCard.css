@@ -1,5 +1,8 @@
 .post-card {
-  padding: 0 20px;
+  width: 300px;
+  border: 15px solid black;
+  padding: 50px;
+  margin: 20px;
 }
 
 .card {

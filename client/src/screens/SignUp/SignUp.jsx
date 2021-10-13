@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './SignUp.css'
 import { signUp } from '../../services/users'
 import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const SignUp = (props) => {
   const history = useHistory()
@@ -37,7 +38,7 @@ const SignUp = (props) => {
         password: '',
         passwordConfirmation: '',
         isError: true,
-        errorMsg: 'Sign Up Details Invalid',
+        errorMsg: 'Welcome New User!',
       })
     }
   }
@@ -61,7 +62,6 @@ const SignUp = (props) => {
     <div className='form-container'>
       <h3>Join The Office</h3>
       <form onSubmit={onSignUp}>
-        {/* <label>Username</label> */}
         <input
           required
           type='text'
@@ -70,7 +70,6 @@ const SignUp = (props) => {
           placeholder='Enter username'
           onChange={handleChange}
         />
-        {/* <label>Email address</label> */}
         <input
           required
           type='email'
@@ -79,7 +78,6 @@ const SignUp = (props) => {
           placeholder='Enter email'
           onChange={handleChange}
         />
-        {/* <label>Password</label> */}
         <input
           required
           name='password'
@@ -88,17 +86,19 @@ const SignUp = (props) => {
           placeholder='Password'
           onChange={handleChange}
         />
-        {/* <label>Password Confirmation</label> */}
-        <input
+        {/* <input
           required
           name='passwordConfirmation'
           value={passwordConfirmation}
           type='password'
           placeholder='Confirm Password'
           onChange={handleChange}
-        />
+        /> */}
         {renderError()}
       </form>
+      <p>
+      Already Have An Account? Sign In <Link to="./sign-in">Here</Link>
+      </p>
     </div>
   )
 }
