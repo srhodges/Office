@@ -27,7 +27,7 @@ const SignIn = (props) => {
     try {
       const user = await signIn(form)
       setUser(user)
-      history.push('/')
+      history.push('/posts')
     } catch (error) {
       console.error(error)
       setForm({
@@ -54,10 +54,11 @@ const SignIn = (props) => {
 
   const { email, password } = form
 
+  props.setIsUser(false)
+
   return (
     <div className="signin-page">
 
-      <Nav/>
 
       <div className="signin-name">
       <h1>The Office</h1>

@@ -3,6 +3,7 @@ import './Posts.css'
 import PostCard from '../../components/PostCard/PostCard'
 import Layout from '../../components/Layout/Layout'
 import SearchBar from '../../components/SearchBar/SearchBar'
+import { Link } from 'react-router-dom'
 
 
 
@@ -11,27 +12,33 @@ const Posts = (props) => {
 
   const { posts, searchResult, setSearchResult } = props
   
-
+  props.setIsUser(true)
 
   return (
-    <Layout user={props.user}>
+ 
       <div className='posts'>
+        <div className="category-container">
         <h1 className='browse-categories'>Browse Categories</h1>
 
-        <div className="category-container">
         <div className="category-box"> 
-          {/* <CategoryCard/> */}
-          <h2>Cat</h2>
-          <h2>Cat</h2>
-          <h2>Cat</h2>
-          <h2>Cat</h2>
-          <h2>Cat</h2>
-          <h2>Cat</h2>
+            <div className="link-box">
+            <Link className="cat-link">Shorts</Link>
+            <Link className="cat-link">Words That Spell Things</Link>
+            <Link className="cat-link">Comics</Link>
+            <Link className="cat-link">Financial</Link>
+            <Link className="cat-link">Excerpts</Link>
+            <Link className="cat-link">Travel</Link>
+            <Link className="cat-link">Learn Something New</Link>
+          </div>
         </div>
           </div>
 
-        <h1 className='featured-works'>Featured Works</h1>
         <div className="featured-container">
+          <h1 className='featured-works'>Featured Works</h1>
+          <div className="featured-box">
+
+        <div className="featured">
+
         {searchResult.map((post, index) => {
           return (
             <PostCard
@@ -45,9 +52,11 @@ const Posts = (props) => {
             )
           })}
           </div>
-          <SearchBar posts={posts} setSearchResult={setSearchResult}/>
+          </div>
+          {/* <SearchBar classname="search-bar" posts={posts} setSearchResult={setSearchResult}/> */}
+          </div>
       </div>
-    </Layout>
+    
   )
 }
 

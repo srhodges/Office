@@ -30,7 +30,7 @@ const SignUp = (props) => {
       const user = await signUp(form)
       console.log("sign up" , user)
       setUser(user)
-      history.push('/')
+      history.push('/posts')
     } catch (error) {
       console.error(error)
       setForm({

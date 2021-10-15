@@ -41,10 +41,10 @@ const PostEdit = (props) => {
     history.push(`/posts/${id}`) 
   }
 
-  
+  props.setIsUser(true)
 
   return (
-    <Layout user={props.user}>
+  
       <form className='edit-form' onSubmit={handleSubmit}>
       <div className='post-edit'>
           
@@ -91,7 +91,7 @@ const PostEdit = (props) => {
           </button>
         </form>
       
-    </Layout>
+    
   )
 }
 

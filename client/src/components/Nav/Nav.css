@@ -2,7 +2,7 @@
 
 nav {
   flex: 1;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   background-color: white;
   z-index: 1;
@@ -47,10 +47,6 @@ nav {
 
 .link {
   flex: 1;
-}
-
-.welcome {
-  padding: 0 100px;
 }
 
 a {

@@ -2,11 +2,17 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 .layout-children {
   flex: 2;
-  padding: 100px;
+  width: 100vw;
+  min-height: calc(100vh-83px);
+  /* margin-top: 70px; */
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 @media (max-width: 500px) {

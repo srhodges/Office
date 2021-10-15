@@ -1,8 +1,9 @@
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 import { useState } from 'react'
 import  Layout  from '../../components/Layout/Layout'
 import { createPost } from '../../services/posts'
 import './PostCreate.css'
+import { useHistory } from 'react-router-dom'
 
 const PostCreate = (props) => {
   const [post, setPost] = useState({
@@ -12,7 +13,9 @@ const PostCreate = (props) => {
     content: '',
   })
 
-  const [isCreated, setCreated] = useState(false)
+
+const history = useHistory()
+
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -25,17 +28,19 @@ const PostCreate = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const created = await createPost(post)
-    setCreated({ created })
+    props.setCreated((prevState) => !prevState)
+    history.push('/posts')
   }
 
-  if (isCreated) {
-    return <Redirect to={`/posts`} />
-  }
+
+  props.setIsUser(true)
+  
   return (
+
+     
     <div className="create-container">
       <div className="create-form-container">
         
-    <Layout user={props.user}>
       <form onSubmit={handleSubmit}>
         <input
           className='input-title'
@@ -76,9 +81,9 @@ const PostCreate = (props) => {
           New Post
         </button>
       </form>
-    </Layout>
           </div>
           </div>
+    
   )
 }
 

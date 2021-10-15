@@ -1,4 +1,96 @@
-.post-detail {
+.details-page {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  background-color: #4e4e4e;
+  height: 100%;
+  width: 100%;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #000000;
+  margin-top: 10%;
+  padding-top: 50px;
+  height: 80%;
+  width: 100%;
+}
+
+.details-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f6e8e8;
+  padding-top: 50px;
+  margin-top: -50px;
+  /* margin-bottom: 50px; */
+  /* transition: all 2s ease; */
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  font-family: "IM Fell Double Pica", serif;
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+.author {
+  font-family: "IM Fell Double Pica", serif;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.details-content {
+  background-color: #272626;
+  padding: 10%;
+  width: 100%;
+  height: 75%;
+  margin: 0 auto;
+}
+
+.create-form-container input {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  margin: 1em auto;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  font-family: "IM Fell Double Pica", serif;
+  background-color: #575757;
+  color: #f6e8e8;
+  border-style: hidden;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.create-form-container form input:focus,
+.create-form-container form input:active {
+  border: 2px solid #f6e8e8;
+}
+
+.create-form-container form textarea:focus,
+.create-form-container form textarea:active {
+  border: 2px solid #f6e8e8;
+  transition: all 0.4s ease;
+}
+
+.create-form-container form textarea {
+  font-family: "IM Fell Double Pica", serif;
+  background-color: #575757;
+  border-style: hidden;
+  margin-top: 10%;
+  width: 100%;
+  color: #f6e8e8;
+}
+
+/* .post-detail {
   display: flex;
   flex-direction: column;
   padding: 100px;
@@ -30,7 +122,7 @@
   width: 500px;
   padding: 0 40px;
 } */
-
+/* 
 .button-container {
   display: flex;
   flex-direction: row;
@@ -111,4 +203,4 @@
   .delete-button {
     width: 40%;
   }
-}
+}  */

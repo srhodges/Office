@@ -11,12 +11,16 @@ import SignUp from './screens/SignUp/SignUp'
 import SignIn from './screens/SignIn/SignIn'
 import SignOut from './screens/SignOut/SignOut'
 import { getPosts } from './services/posts'
+import Layout from './components/Layout/Layout'
 
 const App = () => {
   const [user, setUser] = useState(null)
   const [posts, setPosts] = useState([])
   const [searchResult, setSearchResult] = useState([])
   const [searchInput, setSearchInput] = useState('')
+  const [isCreated, setCreated] = useState(false)
+  const [isDeleted, setDeleted] = useState(false)
+const [isUser, setIsUser] = useState(false)
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -26,7 +30,7 @@ const App = () => {
       setSearchResult(allPosts)
     }
     fetchPosts()
-  }, [])
+  }, [isCreated, isDeleted])
 
 
 
@@ -40,29 +44,35 @@ const App = () => {
 
   return (
     <div className="app">
+      <Layout user={user} isUser={isUser} posts={posts}>
+
       <Switch>
         <Route exact path="/">
-          <Home user={user} setUser={setUser}/>
+          <Home setIsUser={setIsUser} user={user} setUser={setUser}/>
         </Route>
         <Route exact path="/sign-in">
-          <SignIn setUser={setUser} />
+          <SignIn setIsUser={setIsUser} setUser={setUser} />
         </Route>
         <Route exact path="/sign-out">
           <SignOut setUser={setUser} />
         </Route>
         <Route exact path="/new-post">
-          {user ? <PostCreate user={user} /> : <Redirect to="/sign-in" />}
+            {user ? <PostCreate setIsUser={setIsUser} setCreated={setCreated} user={user} /> : <Redirect to="/sign-in" />}
         </Route>
         <Route exact path="/posts/:id/edit">
-          {user ? <PostEdit user={user}  /> : <Redirect to='/sign-in' />}
+          {user ? <PostEdit setIsUser={setIsUser} user={user}  /> : <Redirect to='/sign-in' />}
         </Route>
         <Route exact path="/posts/:id">
-          <PostDetail user={user} />
+          <PostDetail setIsUser={setIsUser} setDeleted={setDeleted} user={user} />
         </Route>
         <Route exact path="/posts">
-          <Posts posts={posts} user={user} searchResult={searchResult} setSearchResult={setSearchResult} />
+          <Posts setIsUser={setIsUser} posts={posts} user={user} searchResult={searchResult} setSearchResult={setSearchResult} />
+        </Route>
+        <Route exact path="/sign-out">
+          <SignOut />
         </Route>
       </Switch>
+      </Layout>
     </div>
   )
 }

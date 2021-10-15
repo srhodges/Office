@@ -18,13 +18,10 @@ function SearchBar(props) {
   }
   
   return (
-    <div>
-    
     <div className="search-results">
       <input type="text" placeholder="Search" onChange={e => handleSearch(e.target.value)} />
-      <button className="search-button"> Search</button>
+      {/* <button className="search-button"> Search</button> */}
       </div>
-    </div>
           );
         }
       

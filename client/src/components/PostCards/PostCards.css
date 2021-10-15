@@ -1,12 +1,12 @@
 .post-cards {
-  width: 90vw;
-  padding: 50px;
-  margin: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .cards {
-  display: flex;
-  overflow-x: scroll;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .browse {
