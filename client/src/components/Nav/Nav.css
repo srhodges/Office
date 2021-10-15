@@ -3,7 +3,7 @@
 nav {
   flex: 1;
   /* position: fixed; */
-  width: 100%;
+  width: 100vw;
   background-color: white;
   z-index: 1;
   top: 0;

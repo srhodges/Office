@@ -44,7 +44,7 @@ const [isUser, setIsUser] = useState(false)
 
   return (
     <div className="app">
-      <Layout user={user} isUser={isUser} posts={posts}>
+      <Layout user={user} isUser={isUser} posts={posts} setSearchResult={setSearchResult}>
 
       <Switch>
         <Route exact path="/">

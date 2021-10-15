@@ -21,7 +21,7 @@
   flex-direction: column;
   /* justify-content: space-between; */
   align-items: center;
-  width: 100%;
+  width: 100vw;
 }
 
 .category-box {
@@ -97,9 +97,20 @@
   background-color: #e6d4d4;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .posts {
-    width: 100%;
+    width: 100vw;
     justify-content: space-around;
+  }
+  .featured-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .featured {
+    display: flex;
+    flex-direction: column;
+  }
+  .category-container {
+    /* width: 100vw; */
   }
 }
