@@ -60,3 +60,22 @@ button {
 .form-container form input:active {
   border: 2px solid #f6e8e8;
 }
+
+@media (max-width: 600px) {
+  .form-container {
+    display: flex;
+    width: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container h3 {
+    margin-top: 5%;
+  }
+
+  .form-container form {
+    width: 120%;
+    padding-top: 15%;
+  }
+}

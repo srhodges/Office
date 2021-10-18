@@ -8,6 +8,7 @@ const Home = (props) => {
 
   const {setUser} = props
   props.setIsUser(false)
+  
   return (
     
     <div className="home-container">

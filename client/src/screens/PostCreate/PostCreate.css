@@ -71,3 +71,18 @@ select:focus {
 .input-title {
   margin-top: 0px;
 }
+
+@media (max-width: 600px) {
+  .create-form-container {
+    margin: 10% auto;
+    margin-top: 25%;
+    transition: all 2s ease;
+    text-align: center;
+    height: 70%;
+    width: 90%;
+  }
+
+  .create-form-container input {
+    width: 90%;
+  }
+}

@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 5%;
-  width: 100%;
+  width: 90%;
   padding: 50px;
   background-color: #e6d4d4;
   border: 1px solid black;
@@ -88,7 +88,6 @@
 
 .featured {
   display: grid;
-  /* border: green solid 2px; */
   justify-content: center;
   height: 80%;
   width: 70%;
@@ -109,8 +108,15 @@
   .featured {
     display: flex;
     flex-direction: column;
+    margin-top: -100%;
   }
-  .category-container {
-    /* width: 100vw; */
+  .category-box {
+    width: 80%;
+  }
+  .featured-works {
+    font-family: "Great Vibes", cursive;
+    font-size: 50px;
+    margin-top: 1em;
+    margin-bottom: 20%;
   }
 }

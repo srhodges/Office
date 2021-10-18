@@ -8,11 +8,8 @@
   width: 100%;
 }
 
-/* sign up form css is carrying over here */
-
 .signin-name {
   flex-direction: column;
-  border: ;
   margin-top: 10%;
   color: #f6e8e8;
   font-family: Great Vibes, curvsive;
@@ -25,4 +22,19 @@
   color: #f6e8e8;
   font-family: Great Vibes, curvsive;
   font-size: 30px;
+}
+
+@media (max-width: 600px) {
+  .signin-page {
+    width: 100%;
+  }
+
+  .signin-name {
+    flex-direction: column;
+    margin-top: 10%;
+    font-size: 30px;
+  }
+  .signin-text {
+    text-align: center;
+  }
 }
