@@ -45,19 +45,17 @@ const PostEdit = (props) => {
 
   return (
   
-      <form className='edit-form' onSubmit={handleSubmit}>
-      <div className='post-edit'>
+      <form className='edit-page' onSubmit={handleSubmit}>
+      <div className='post-edit-container'>
           
             <input
               className='edit-input-image-link'
               placeholder='Image Link'
               value={post.imgURL}
               name='imgURL'
-              required
               onChange={handleChange}
             />
           
-        </div>
         
           <input
             className='input-title'
@@ -67,7 +65,7 @@ const PostEdit = (props) => {
             required
             autoFocus
             onChange={handleChange}
-          />
+            />
           <input
             className='input-author'
             placeholder='Author'
@@ -75,7 +73,7 @@ const PostEdit = (props) => {
             name='author'
             required
             onChange={handleChange}
-          />
+            />
           <textarea
             className='textarea-content'
             rows={10}
@@ -85,8 +83,9 @@ const PostEdit = (props) => {
             name='content'
             required
             onChange={handleChange}
-          />
-          <button type='submit' className='save-button'>
+            />
+            </div>
+          <button type='submit' className='button'>
             Save
           </button>
         </form>

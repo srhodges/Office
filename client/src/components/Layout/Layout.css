@@ -10,7 +10,6 @@
   flex: 2;
   width: 100vw;
   min-height: calc(100vh-83px);
-  /* margin-top: 70px; */
   margin-left: -2px;
   margin-right: -2px;
 }

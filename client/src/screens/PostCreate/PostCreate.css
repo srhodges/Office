@@ -81,8 +81,4 @@ select:focus {
     height: 70%;
     width: 90%;
   }
-
-  .create-form-container input {
-    width: 90%;
-  }
 }

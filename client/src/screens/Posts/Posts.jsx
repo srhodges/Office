@@ -4,6 +4,7 @@ import PostCard from '../../components/PostCard/PostCard'
 import Layout from '../../components/Layout/Layout'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/Footer/Footer'
 
 
 
@@ -53,7 +54,6 @@ const Posts = (props) => {
           })}
           </div>
           </div>
-          {/* <SearchBar classname="search-bar" posts={posts} setSearchResult={setSearchResult}/> */}
           </div>
       </div>
     

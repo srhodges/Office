@@ -1,3 +1,5 @@
+/* @import url("https://fonts.googleapis.com/css?family=Kalam&display=swap"); */
+
 .home-container {
   display: flex;
   flex-direction: row;
@@ -17,13 +19,16 @@
 .home-name {
   color: #f6e8e8;
   font-size: 50px;
-  margin-left: 60%;
+  margin-left: 40%;
+  margin-top: -60%;
+  text-align: center;
 }
 
 .home-text {
   color: #f6e8e8;
-  margin-left: 60%;
-  margin-top: -20%;
+  margin-left: 40%;
+  margin-top: -70%;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -44,6 +49,7 @@
     color: #f6e8e8;
     font-size: 30px;
     margin-left: 0%;
+    margin-top: 0%;
   }
 
   .home-text {
@@ -51,8 +57,4 @@
     margin-left: 0%;
     margin-top: -10%;
   }
-
-  /* .home-form-container {
-    width: 80%;
-  } */
 }
