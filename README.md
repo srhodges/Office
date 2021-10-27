@@ -132,3 +132,23 @@ const [isUser, setIsUser] = useState(false)
 export default App
 
 ```
+<br>
+
+## SWOT Analysis
+
+### Strengths:
+
+Cemented principles of useState, props, params.
+
+### Weaknesses:
+
+Still gaining knowledge in backend auth.
+
+### Opportunities:
+
+Working on styling was informative and enjoyable this go around with the experience I've gained. 
+
+### Threats:
+
+Time! Lots to do, but I'm getting stronger at assessing how long each task should take and completing it in the allotted time.
+
