@@ -13,18 +13,14 @@ https://www.figma.com/file/Ti94Lhxehxm23D7hFtwtJr/The-Office?node-id=2%3A4
 
 <br>
 
-### MVP/PostMVP
-
->The functionality will then be divided into two separate lists: MPV and PostMVP. Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
-
-#### MVP
+## MVP
 
 - Successfully create and render external api
 - Successfully allow user to add posts 
 - Successfully route to all pages
 - Make it look nice!
 
-#### PostMVP
+## PostMVP
 
 - Allow uers to search posts 
 
