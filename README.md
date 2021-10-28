@@ -1,60 +1,49 @@
-# Project Overview
+# The Office
 
-## Project Name
-
-The Office
-
-## Project Description
+## Overview
 
 This application will serve as a blog site where user can create posts and browse others.
 
-## API and Data Sample
-
+<br>
 
 ## Wireframes
 
-https://whimsical.com/the-office-AXyDXxw7bBf3pSyJAwoRJM
+https://whimsical.com/the-office-AXyDXxw7bBf3pSyJAwoRJM <br>
+https://www.figma.com/file/Ti94Lhxehxm23D7hFtwtJr/The-Office?node-id=2%3A4
 
-### MVP/PostMVP
+<br>
 
-The functionality will then be divided into two separate lists: MPV and PostMVP. Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
-
-#### MVP
+## MVP
 
 - Successfully create and render external api
 - Successfully allow user to add posts 
 - Successfully route to all pages
 - Make it look nice!
 
-#### PostMVP
+## PostMVP
 
-- Allow uers to search posts  
-- Create playlist page
-- Add comment section to blog detail page
+- Allow uers to search posts 
+
+<br>
 
 ## Project Schedule
 
 This schedule will be used to keep track of your progress throughout the week and align with our expectations.
 
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 | Day           | Deliverable                                        | Status     |
 | ------------- | -------------------------------------------------- | ---------- |
-|Oct 7th | Prompt / Wireframes / Priority Matrix / Timeframes  | Complete |
-|Oct 8th | Project Approval                                    | Complete |
-|Oct 10th | Backend Logic                                      | Incomplete |
-|Oct 11th | Clickable Express Model                            | Incomplete |
-|Oct 12th | Connect MongoDB, Heroku                            | Incomplete |
-|Oct 13th | CSS                                                | Incomplete |
-|Oct 14th | CSS                                                | Incomplete |
-|Oct 15th | MVP                                                | Incomplete |
-|Oct 18th | Presentations                                      | Incomplete |
+|Oct 7th | Prompt / Wireframes / Timeframes                           | Complete |
+|Oct 8th | Project Approval                                           | Complete |
+|Oct 10th | Backend Logic                                             | Complete |
+|Oct 11th | Clickable Express Model                                   | Complete |
+|Oct 12th | Connect MongoDB, Heroku                                   | Complete |
+|Oct 13th | CSS                                                       | Complete |
+|Oct 14th | CSS                                                       | Complete |
+|Oct 15th | MVP                                                       | Complete |
+|Oct 18th | Presentations                                             | Complete |
 
-## Priority Matrix
-
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix. Link this image in a similar manner to your wireframes
-
-*Trying to upload matrix image*
+<br>
 
 ## Timeframes
 
@@ -64,19 +53,102 @@ Time frames are also key in the development cycle. You have limited time to code
 
 | Component           | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Formatting React App|    H     |     8 hrs      |     0 hrs     |     hrs    |
-| Working with API    |    H     |     4 hrs      |     0 hrs     |     hrs    |
-| Functionality in JS |    H     |     6 hrs      |     0 hrs     |     hrs    |
-| Styling with CSS    |    H     |     8 hrs      |     0 hrs     |     hrs    |
-| Total               |          |     26 hrs     |     0 hrs     |     hrs    |
+| Figma/Component Hier|    H     |     6 hrs      |     6 hrs     |     hrs    |
+| Backend Auth Logic  |    H     |     4 hrs      |     4 hrs     |     hrs    |
+| Routes and Layout   |    H     |     6 hrs      |     5 hrs     |     hrs    |
+| React App           |    H     |     6 hrs      |     6 hrs     |     hrs    |
+| CSS                 |    H     |     8 hrs      |     8 hrs     |     hrs    |
+| Total               |          |     30 hrs     |     29 hrs    |     hrs    |
+
+<br>
 
 ## Code Snippet
 
 ```
+const App = () => {
+  const [user, setUser] = useState(null)
+  const [posts, setPosts] = useState([])
+  const [searchResult, setSearchResult] = useState([])
+  const [searchInput, setSearchInput] = useState('')
+  const [isCreated, setCreated] = useState(false)
+  const [isDeleted, setDeleted] = useState(false)
+const [isUser, setIsUser] = useState(false)
 
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const allPosts = await getPosts()
+      console.log('hey', allPosts)
+      setPosts(allPosts)
+      setSearchResult(allPosts)
+    }
+    fetchPosts()
+  }, [isCreated, isDeleted])
+
+
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await verifyUser()
+      user ? setUser(user) : setUser(null)
+    }
+    fetchUser()
+  }, [])
+
+  return (
+    <div className="app">
+      <Layout user={user} isUser={isUser} posts={posts} setSearchResult={setSearchResult}>
+
+      <Switch>
+        <Route exact path="/">
+          <Home setIsUser={setIsUser} user={user} setUser={setUser}/>
+        </Route>
+        <Route exact path="/sign-in">
+          <SignIn setIsUser={setIsUser} setUser={setUser} />
+        </Route>
+        <Route exact path="/sign-out">
+          <SignOut setUser={setUser} />
+        </Route>
+        <Route exact path="/new-post">
+            {user ? <PostCreate setIsUser={setIsUser} setCreated={setCreated} user={user} /> : <Redirect to="/sign-in" />}
+        </Route>
+        <Route exact path="/posts/:id/edit">
+          {user ? <PostEdit setIsUser={setIsUser} user={user}  /> : <Redirect to='/sign-in' />}
+        </Route>
+        <Route exact path="/posts/:id">
+          <PostDetail setIsUser={setIsUser} setDeleted={setDeleted} user={user} />
+        </Route>
+        <Route exact path="/posts">
+          <Posts setIsUser={setIsUser} posts={posts} user={user} searchResult={searchResult} setSearchResult={setSearchResult} />
+        </Route>
+        <Route exact path="/sign-out">
+          <SignOut />
+        </Route>
+      </Switch>
+      </Layout>
+    </div>
+  )
+}
+
+export default App
 
 ```
+<br>
 
-## Change Log
+## SWOT Analysis
 
-Use this section to document what changes were made and the reasoning behind those changes.
+### Strengths:
+
+Cemented principles of useState, props, params.
+
+### Weaknesses:
+
+Still gaining knowledge in backend auth.
+
+### Opportunities:
+
+Working on styling was informative and enjoyable this go around with the experience I've gained. 
+
+### Threats:
+
+Time! Lots to do, but I'm getting stronger at assessing how long each task should take and completing it in the allotted time.
+
